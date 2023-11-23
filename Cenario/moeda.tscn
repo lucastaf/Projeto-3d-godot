@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcp1wxyrdmw75"]
+
+[ext_resource type="Script" path="res://Cenario/moeda.cs" id="1_ow5vs"]
+[ext_resource type="PackedScene" uid="uid://cpuhjfglnp72v" path="res://KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/coin_stack_small.gltf.glb" id="1_w3qm8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfra3"]
+
+[node name="Moeda" type="Node3D"]
+script = ExtResource("1_ow5vs")
+
+[node name="Moeda" type="MeshInstance3D" parent="."]
+
+[node name="coin_stack_small_gltf" parent="Moeda" instance=ExtResource("1_w3qm8")]
+
+[node name="Area3D" type="Area3D" parent="Moeda"]
+transform = Transform3D(1.00691, 0, 0, 0, 1.00691, 0, 0, 0, 1.00691, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Moeda/Area3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.822795, 0, 0, 0, 0.999999, 0, 0.249318, 0)
+shape = SubResource("BoxShape3D_dfra3")
+
+[connection signal="body_entered" from="Moeda/Area3D" to="." method="_on_area_3d_body_entered"]

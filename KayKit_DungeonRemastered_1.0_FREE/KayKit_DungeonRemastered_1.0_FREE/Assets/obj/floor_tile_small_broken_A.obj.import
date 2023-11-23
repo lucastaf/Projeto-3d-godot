@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bcfk2n2u87d18"
+path="res://.godot/imported/floor_tile_small_broken_A.obj-55c9d36a9765d98492cda1fa174b71eb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_tile_small_broken_A.obj-55c9d36a9765d98492cda1fa174b71eb.mesh"]
+
+source_file="res://KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/obj/floor_tile_small_broken_A.obj"
+dest_files=["res://.godot/imported/floor_tile_small_broken_A.obj-55c9d36a9765d98492cda1fa174b71eb.mesh", "res://.godot/imported/floor_tile_small_broken_A.obj-55c9d36a9765d98492cda1fa174b71eb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

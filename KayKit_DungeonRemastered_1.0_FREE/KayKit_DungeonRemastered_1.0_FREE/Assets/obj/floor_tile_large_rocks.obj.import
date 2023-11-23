@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bf5h6m06qlgcw"
+path="res://.godot/imported/floor_tile_large_rocks.obj-238cc4def13e2702c96391d14e66f1ab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_tile_large_rocks.obj-238cc4def13e2702c96391d14e66f1ab.mesh"]
+
+source_file="res://KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/obj/floor_tile_large_rocks.obj"
+dest_files=["res://.godot/imported/floor_tile_large_rocks.obj-238cc4def13e2702c96391d14e66f1ab.mesh", "res://.godot/imported/floor_tile_large_rocks.obj-238cc4def13e2702c96391d14e66f1ab.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

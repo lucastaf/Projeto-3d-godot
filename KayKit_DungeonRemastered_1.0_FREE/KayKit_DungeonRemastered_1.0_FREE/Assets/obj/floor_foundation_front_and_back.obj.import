@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://fh5aib8guh3q"
+path="res://.godot/imported/floor_foundation_front_and_back.obj-91a591e56494290b6986a50ab9385bca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_foundation_front_and_back.obj-91a591e56494290b6986a50ab9385bca.mesh"]
+
+source_file="res://KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/obj/floor_foundation_front_and_back.obj"
+dest_files=["res://.godot/imported/floor_foundation_front_and_back.obj-91a591e56494290b6986a50ab9385bca.mesh", "res://.godot/imported/floor_foundation_front_and_back.obj-91a591e56494290b6986a50ab9385bca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

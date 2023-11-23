@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bjiib1131nh0s"
+path="res://.godot/imported/floor_tile_large.obj-345794e10caf9a450aca7cbaf24e892b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_tile_large.obj-345794e10caf9a450aca7cbaf24e892b.mesh"]
+
+source_file="res://KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/obj/floor_tile_large.obj"
+dest_files=["res://.godot/imported/floor_tile_large.obj-345794e10caf9a450aca7cbaf24e892b.mesh", "res://.godot/imported/floor_tile_large.obj-345794e10caf9a450aca7cbaf24e892b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

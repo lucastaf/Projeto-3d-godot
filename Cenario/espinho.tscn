@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcswrbytyhrf7"]
+
+[ext_resource type="Script" path="res://Cenario/espinho.cs" id="1_r011f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6mqg"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_ilf3s"]
+material = SubResource("StandardMaterial3D_t6mqg")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iue3b"]
+points = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Espinho" type="Node3D"]
+transform = Transform3D(1.11848, 0, 0, 0, 1, 0, 0, 0, 0.877273, 0, 0, 0)
+script = ExtResource("1_r011f")
+
+[node name="Espinho" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.593983, 0, 0, 0, 1.0285, 0, 0, 0, 0.406821, 0, 0, 0)
+mesh = SubResource("PrismMesh_ilf3s")
+skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="Espinho"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Espinho/Area3D"]
+shape = SubResource("ConvexPolygonShape3D_iue3b")
+
+[connection signal="body_entered" from="Espinho/Area3D" to="." method="_on_area_3d_body_entered"]

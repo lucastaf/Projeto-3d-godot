@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3jl3f7ynlec1"
+path="res://.godot/imported/floor_dirt_small_D.obj-7e043cd88b62aac2514c62039fbc307d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_dirt_small_D.obj-7e043cd88b62aac2514c62039fbc307d.mesh"]
+
+source_file="res://KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/obj/floor_dirt_small_D.obj"
+dest_files=["res://.godot/imported/floor_dirt_small_D.obj-7e043cd88b62aac2514c62039fbc307d.mesh", "res://.godot/imported/floor_dirt_small_D.obj-7e043cd88b62aac2514c62039fbc307d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
