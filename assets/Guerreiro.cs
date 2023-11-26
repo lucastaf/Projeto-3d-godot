@@ -1,4 +1,4 @@
-using Godot;
+    using Godot;
 using System;
 
 public partial class Guerreiro : CharacterBody3D
@@ -91,8 +91,6 @@ public partial class Guerreiro : CharacterBody3D
 
     public void dead()
     {
-        totalMoedas = 0;
-        UiMoedas.Text = "Moedas = 0";
-        this.GlobalPosition = new Vector3(0, 0, 0);
+        GetTree().ReloadCurrentScene();
     }
 }

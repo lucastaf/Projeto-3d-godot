@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjh213fnpu6gn"]
+[gd_scene load_steps=8 format=3 uid="uid://0guyidko5eci"]
 
-[ext_resource type="PackedScene" uid="uid://t4w0t1f5ssj7" path="res://assets/Guerreiro.tscn" id="2_3uorr"]
+[ext_resource type="PackedScene" uid="uid://qkybcxdjk2j" path="res://Guerreiro.tscn" id="2_3uorr"]
 [ext_resource type="PackedScene" uid="uid://dh3lumc0fbott" path="res://Cenario/chao.tscn" id="3_6vra6"]
 [ext_resource type="PackedScene" uid="uid://dcp1wxyrdmw75" path="res://Cenario/moeda.tscn" id="3_t6auv"]
 [ext_resource type="PackedScene" uid="uid://dcswrbytyhrf7" path="res://Cenario/espinho.tscn" id="4_rordl"]

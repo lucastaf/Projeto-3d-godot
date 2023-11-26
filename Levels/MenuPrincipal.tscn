@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://7sidg2fak7bm"]
+
+[ext_resource type="Script" path="res://Levels/MenuPrincipal.cs" id="1_t1qtk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t1qtk")
+
+[node name="iniciarJogo" type="Button" parent="."]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 214.0
+offset_right = 577.0
+offset_bottom = 262.0
+text = "Iniciar Jogo"
+
+[node name="sobre" type="Button" parent="."]
+offset_left = 415.0
+offset_top = 277.0
+offset_right = 577.0
+offset_bottom = 325.0
+text = "Sobre"
+
+[node name="sair" type="Button" parent="."]
+offset_left = 415.0
+offset_top = 340.0
+offset_right = 577.0
+offset_bottom = 388.0
+text = "Sair"

@@ -10,10 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Teste 3D"
-run/main_scene="res://Teste3d.tscn"
+config/name="Projeto 3d Godot"
+run/main_scene="res://Levels/MenuPrincipal.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
-config/icon="res://icon.svg"
 
 [dotnet]
 
