@@ -11,12 +11,14 @@ public partial class Guerreiro : CharacterBody3D
     public const float JumpVelocity = 4.5f;
     private bool onGround = true;
     private int numPulos;
+    public Vector3 posicaoinicial;
 
     // Get the gravity from the project settings to be synced with RigidBody nodes.
     public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
     public override void _Ready()
     {
+        posicaoinicial = this.Position;
         UiMoedas = GetNode<Label>("Moedas");
         animacoes = GetNode<AnimationTree>("AnimationState");
         stateAnimacoes = (AnimationNodeStateMachinePlayback)animacoes.Get("parameters/playback");
@@ -25,7 +27,7 @@ public partial class Guerreiro : CharacterBody3D
     public override void _PhysicsProcess(double delta)
     {
 
-        if(this.GlobalPosition.Y < -10)
+        if (this.GlobalPosition.Y < -10)
         {
             dead();
         }
@@ -51,17 +53,19 @@ public partial class Guerreiro : CharacterBody3D
         }
 
         // Handle Jump.
-        if (Input.IsActionJustPressed("pulo") && numPulos>0)
+
+        if (Input.IsActionJustPressed("pulo") && numPulos > 0)
         {
             velocity.Y = JumpVelocity;
             numPulos--;
         }
-
-
         if (Input.IsActionJustPressed("ataque"))
         {
             stateAnimacoes.Travel("Atacando");
         }
+
+
+
 
         // Get the input direction and handle the movement/deceleration.
         // As good practice, you should replace UI actions with custom gameplay actions.
@@ -83,6 +87,20 @@ public partial class Guerreiro : CharacterBody3D
         MoveAndSlide();
     }
 
+    public override void _Input(InputEvent @event)
+    {
+        if (Input.IsMouseButtonPressed(MouseButton.Right)) Input.MouseMode = Input.MouseModeEnum.Captured;
+        if (Input.IsKeyPressed(Key.Escape)) Input.MouseMode = Input.MouseModeEnum.Visible;
+
+        if(@event is InputEventMouseMotion eventMouseMotion && Input.MouseMode == Input.MouseModeEnum.Captured)
+        {
+            float posicaoX = eventMouseMotion.Relative.X * -1;
+            this.RotateY(posicaoX/500);
+        }
+
+        
+    }
+
     public void moedaColetada()
     {
         totalMoedas++;
@@ -91,6 +109,6 @@ public partial class Guerreiro : CharacterBody3D
 
     public void dead()
     {
-        GetTree().ReloadCurrentScene();
+        this.Position = posicaoinicial;
     }
 }

@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://crhcakiwc7kmq"]
+
+[ext_resource type="PackedScene" uid="uid://cc6rn4yw7fexr" path="res://KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/candle.gltf.glb" id="1_a4isl"]
+[ext_resource type="Script" path="res://assets/vela.cs" id="1_mympb"]
+[ext_resource type="PackedScene" uid="uid://da1gahp67kncy" path="res://KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/candle_lit.gltf.glb" id="2_qslaq"]
+[ext_resource type="PackedScene" uid="uid://baa5tiw1dnaqi" path="res://KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/table_small.gltf.glb" id="4_vy4i0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kkdev"]
+line_spacing = 5.0
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6d6lp"]
+size = Vector3(3, 3, 3)
+
+[node name="Vela" type="Node3D"]
+script = ExtResource("1_mympb")
+
+[node name="vela" parent="." instance=ExtResource("1_a4isl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02013, 0)
+
+[node name="vela_acesa" parent="." instance=ExtResource("2_qslaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02013, 0)
+visible = false
+
+[node name="texto" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = 258.0
+offset_right = 181.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Preione 'SALVAR' para salvar neste checkpoint"
+label_settings = SubResource("LabelSettings_kkdev")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68548, 0)
+shape = SubResource("BoxShape3D_6d6lp")
+
+[node name="table_small_gltf" parent="." instance=ExtResource("4_vy4i0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00806904, 2.38419e-07, -0.00860786)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

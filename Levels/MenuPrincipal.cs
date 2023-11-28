@@ -12,4 +12,9 @@ public partial class MenuPrincipal : Control
 	public override void _Process(double delta)
 	{
 	}
+
+	private void _on_iniciar_jogo_pressed()
+	{
+		GetTree().ChangeSceneToFile("res://Levels/Level1.tscn");
+	}
 }

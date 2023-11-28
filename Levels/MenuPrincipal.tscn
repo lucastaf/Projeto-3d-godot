@@ -22,6 +22,7 @@ offset_bottom = 262.0
 text = "Iniciar Jogo"
 
 [node name="sobre" type="Button" parent="."]
+layout_mode = 0
 offset_left = 415.0
 offset_top = 277.0
 offset_right = 577.0
@@ -29,8 +30,11 @@ offset_bottom = 325.0
 text = "Sobre"
 
 [node name="sair" type="Button" parent="."]
+layout_mode = 0
 offset_left = 415.0
 offset_top = 340.0
 offset_right = 577.0
 offset_bottom = 388.0
 text = "Sair"
+
+[connection signal="pressed" from="iniciarJogo" to="." method="_on_iniciar_jogo_pressed"]
