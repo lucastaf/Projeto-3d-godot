@@ -8,7 +8,7 @@ public partial class Guerreiro : CharacterBody3D
     Label UiMoedas;
     int totalMoedas = 0;
     public const float Speed = 5.0f;
-    public const float JumpVelocity = 4.5f;
+    public const float JumpVelocity = 6.0f;
     private bool onGround = true;
     private int numPulos;
     public Vector3 posicaoinicial;

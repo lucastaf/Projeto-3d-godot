@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://0guyidko5eci"]
+[gd_scene load_steps=9 format=3 uid="uid://dywwafkcx5qtr"]
 
 [ext_resource type="PackedScene" uid="uid://t4w0t1f5ssj7" path="res://assets/Guerreiro.tscn" id="2_3uorr"]
-[ext_resource type="PackedScene" uid="uid://crhcakiwc7kmq" path="res://assets/vela.tscn" id="3_1f8lx"]
-[ext_resource type="MeshLibrary" uid="uid://bvum5btgrrux2" path="res://assets/tiles.tres" id="5_ucpt8"]
+[ext_resource type="PackedScene" path="res://assets/vela.tscn" id="3_1f8lx"]
+[ext_resource type="PackedScene" uid="uid://dcp1wxyrdmw75" path="res://Cenario/moeda.tscn" id="3_btp4l"]
+[ext_resource type="PackedScene" uid="uid://dcswrbytyhrf7" path="res://Cenario/espinho.tscn" id="5_hjosm"]
+[ext_resource type="MeshLibrary" uid="uid://c4srcl6nu3ep" path="res://assets/tiles.tres" id="5_ucpt8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xcek5"]
 sky_top_color = Color(0.505882, 0.584314, 0.819608, 1)
@@ -30,25 +32,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.465254)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pt04v")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, -0.473104, 0.881006, 0, -0.881006, -0.473104, 0, 6.22063, -2.20791)
-
 [node name="Knight" parent="." instance=ExtResource("2_3uorr")]
-transform = Transform3D(0.99915, 0.00412864, -0.0410092, -0.00420752, 0.999989, -0.00183733, 0.0410012, 0.00200831, 0.999157, -4.54697, -0.510904, -1.97059)
+transform = Transform3D(0.99915, 0.00412864, -0.0410092, -0.00420752, 0.999989, -0.00183733, 0.0410012, 0.00200831, 0.999157, -1.23896, 4.87005, 7.39658)
 
 [node name="Cenario" type="GridMap" parent="."]
 transform = Transform3D(1.11848, 0, 0, 0, 1, 0, 0, 0, 0.877273, 3.06721, 1.74567, -17.1889)
 mesh_library = ExtResource("5_ucpt8")
-cell_size = Vector3(4, 1, 4)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
 data = {
-"cells": PackedInt32Array(-196608, 4, 655365, -131073, 4, 655365, -131074, 4, 655365, -131075, 4, 655365, -131075, 3, 655365, -131074, 0, 655365, -131073, 0, 655365, -196608, 0, 655365, -196608, 1, 655365, -196608, 2, 655365, -196608, 3, 655365, -131073, 2, 655365, -131073, 1, 655365, -131073, 3, 655365, -131074, 3, 655365, -131074, 2, 655365, -131074, 1, 655365, -196607, 0, 1048581, -196607, 1, 1048581, -196607, 2, 1048581, -196607, 3, 1048581, -196607, 4, 1048581, -131075, 2, 1048581, -131075, 1, 1048581, -131075, 0, 1048581, -131075, 65535, 1048581, -131074, 65535, 1048581, -131073, 65535, 1048581, -196608, 65535, 1048581, -196607, 65535, 1048581, -2, 65534, 1048581, -1, 65534, 1048581, -2, 65533, 1048581, -1, 65533, 1048581, -2, 65532, 1048581, -1, 65532, 1048581, -2, 65529, 1048581, -1, 65529, 1048581, -1, 65528, 1048581, -2, 65528, 1048581, -2, 65527, 1048581, -1, 65527, 1048581, -1, 65523, 1048581, -2, 65523, 1048581, -2, 65522, 1048581, -1, 65522, 1048581, -2, 65531, 1048579, -2, 65530, 1048579, -1, 65526, 1048579, -1, 65525, 1048579, -1, 65524, 1048579, -2, 65525, 1441798, -1, 65530, 1441795, -1, 65531, 1441795)
+"cells": PackedInt32Array(65533, 0, 1441797, 65534, 0, 1441797, 65535, 0, 1441797, 0, 0, 1441797, 0, 15, 1441797, 1, 0, 1441797, 1, 1, 1441797, 1, 2, 1441797, 1, 3, 1441797, 1, 4, 1441797, 1, 5, 1441797, 1, 6, 1441797, 1, 7, 1441797, 1, 8, 1441797, 1, 10, 1441797, 1, 13, 1441797, 2, 0, 1441797, 2, 1, 1441797, 2, 2, 1441797, 2, 3, 1441797, 2, 4, 1441797, 2, 5, 1441797, 2, 7, 1441797, 2, 8, 1441797, 2, 9, 1441797, 2, 10, 1441797, 2, 11, 1441797, 2, 12, 1441797, 2, 13, 1441797, 2, 14, 1441797, 2, 15, 1441797, 2, 16, 1441797, 3, 0, 1441797, 3, 1, 1441797, 3, 2, 1441797, 3, 3, 1441797, 3, 4, 1441797, 3, 5, 1441797, 3, 7, 1441797, 3, 8, 1441797, 3, 9, 1441797, 3, 10, 1441797, 3, 11, 1441797, 3, 12, 1441797, 3, 13, 1441797, 3, 14, 1441797, 3, 15, 1441797, 3, 16, 1441797, 65531, 0, 1441797, 65529, 0, 1441797, 65529, 2, 1441797, 65529, 4, 1441797, 65529, 6, 1441797, 65529, 8, 1441797, 65529, 10, 1441797, 65529, 12, 1441797, 65529, 14, 1441797, 65529, 16, 1441797, 65533, 16, 1441797, 65531, 16, 1441797, 65531, 14, 1441797, 65533, 14, 1441797, 65531, 2, 1441797, 65531, 4, 1441797, 65531, 6, 1441797, 65531, 8, 1441797, 65531, 10, 1441797, 65531, 12, 1441797, 65533, 12, 1441797, 65535, 14, 1441797, 65535, 12, 1441797, 65535, 11, 1441797, 65534, 9, 1441797, 65534, 8, 1441797, 65534, 7, 1441797, 65534, 6, 1441797, 65534, 5, 1441797, 65534, 4, 1441797, 65533, 3, 1441795, 65534, 2, 655363, 65535, 6, 1441797, 65533, 8, 1441797, 65533, 7, 1441795, 65532, 6, 1441797, 65531, 3, 1441797, 65530, 2, 1441797, 65530, 1, 1441797, 65531, 1, 1441797, 65532, 0, 1441797, 65534, 1, 1441797, 65535, 2, 1441797, 65534, 3, 1441797, 0, 2, 1441797, 65533, 2, 1441797, 65532, 2, 1441797, 65532, 1, 1441797, 65532, 3, 1441797, 65532, 4, 1441797, 65532, 5, 1441797, 65532, 7, 1441797, 65532, 8, 1441797, 65533, 9, 1441795, 65533, 10, 1441797, 65532, 10, 1441797, 65532, 11, 1441797, 65533, 11, 1441797, 65535, 7, 1048579, 0, 8, 1441797, 0, 9, 1441797, 0, 10, 1441797, 0, 11, 1441797, 4, 0, 1441795, 4, 2, 1441795, 4, 4, 1441795, 4, 6, 1441795, 4, 8, 1441795, 4, 10, 1441795, 4, 12, 1441795, 4, 14, 1441795, 4, 16, 1441795, 3, 17, 3, 1, 17, 3, 65535, 17, 3, 65533, 17, 3, 65531, 17, 3, 65529, 17, 3, 65528, 16, 1441795, 65528, 14, 1441795, 65528, 12, 1441795, 65528, 10, 1441795, 65528, 8, 1441795, 65528, 6, 1441795, 65528, 4, 1441795, 65528, 2, 1441795, 65528, 0, 1441795, 65535, 3, 1048579, 65535, 5, 1048579, 65535, 9, 1048579, 65534, 10, 3, 65533, 5, 1441795, 196606, 9, 655365, 196606, 7, 655365, 196606, 5, 655365, 196606, 3, 655365, 0, 4, 655365, 65535, 16, 655365, 0, 16, 655365, 131070, 13, 655366)
 }
-metadata/_editor_floor_ = Vector3(0, -1, 0)
+metadata/_editor_floor_ = Vector3(0, 1, 0)
 
-[node name="checkpoints" type="Node3D" parent="."]
+[node name="props" type="Node3D" parent="."]
+transform = Transform3D(1.11848, 0, 0, 0, 1, 0, 0, 0, 0.877273, 3.06721, 1.74567, -17.1889)
 
-[node name="Vela" parent="checkpoints" instance=ExtResource("3_1f8lx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12697, -0.709144, -17.2401)
+[node name="espinhos" type="Node3D" parent="props"]
+transform = Transform3D(0.89407, 0, 0, 0, 1, 0, 0, 0, 1.1399, -2.7423, -1.74567, 19.5936)
 
-[node name="Vela2" parent="checkpoints" instance=ExtResource("3_1f8lx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35364, 1.29086, -65.0934)
+[node name="Espinho" parent="props/espinhos" instance=ExtResource("5_hjosm")]
+transform = Transform3D(1.11848, 0, 0, 0, 1, 0, 0, 0, 0.877273, 4, 2, -0.46525)
+
+[node name="Espinho2" parent="props/espinhos" instance=ExtResource("5_hjosm")]
+transform = Transform3D(1.11848, 0, 0, 0, 1, 0, 0, 0, 0.877273, -6, 2, -0.465248)
+
+[node name="moedas" type="Node3D" parent="props"]
+transform = Transform3D(0.89407, 0, 0, 0, 1, 0, 0, 0, 1.1399, -2.7423, -1.74567, 19.5936)
+
+[node name="Moeda" parent="props/moedas" instance=ExtResource("3_btp4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43212, 5.79086, -10.3292)
+
+[node name="Moeda2" parent="props/moedas" instance=ExtResource("3_btp4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37185, 5.79086, -6.6799)
+
+[node name="Moeda3" parent="props/moedas" instance=ExtResource("3_btp4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.54401, 1.79086, 6.25671)
+
+[node name="Velas" type="Node3D" parent="props"]
+transform = Transform3D(0.894071, 0, 0, 0, 1, 0, 0, 0, 1.1399, -3.70063, 4.04519, 16.2249)
+
+[node name="Vela" parent="props/Velas" instance=ExtResource("3_1f8lx")]
+
+[node name="Vela2" parent="props/Velas" instance=ExtResource("3_1f8lx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17112, -4, 12.3624)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.304864, 0.952396, 0, -0.952396, -0.304864, 0, 11.7551, -2.67316)
+light_energy = 0.838
+shadow_enabled = true
