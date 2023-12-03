@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dywwafkcx5qtr"]
+[gd_scene load_steps=10 format=3 uid="uid://dywwafkcx5qtr"]
 
 [ext_resource type="PackedScene" uid="uid://t4w0t1f5ssj7" path="res://assets/Guerreiro.tscn" id="2_3uorr"]
-[ext_resource type="PackedScene" path="res://assets/vela.tscn" id="3_1f8lx"]
-[ext_resource type="PackedScene" uid="uid://dcp1wxyrdmw75" path="res://Cenario/moeda.tscn" id="3_btp4l"]
+[ext_resource type="PackedScene" uid="uid://crhcakiwc7kmq" path="res://assets/vela.tscn" id="3_1f8lx"]
+[ext_resource type="PackedScene" uid="uid://dbuiqruj185sh" path="res://Cenario/alavanca.tscn" id="5_475so"]
 [ext_resource type="PackedScene" uid="uid://dcswrbytyhrf7" path="res://Cenario/espinho.tscn" id="5_hjosm"]
 [ext_resource type="MeshLibrary" uid="uid://c4srcl6nu3ep" path="res://assets/tiles.tres" id="5_ucpt8"]
+[ext_resource type="PackedScene" uid="uid://nmlqs350uqf1" path="res://Cenario/door.tscn" id="6_k1tco"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xcek5"]
 sky_top_color = Color(0.505882, 0.584314, 0.819608, 1)
@@ -32,11 +33,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.465254)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pt04v")
 
-[node name="Knight" parent="." instance=ExtResource("2_3uorr")]
-transform = Transform3D(0.99915, 0.00412864, -0.0410092, -0.00420752, 0.999989, -0.00183733, 0.0410012, 0.00200831, 0.999157, -1.23896, 4.87005, 7.39658)
-
 [node name="Cenario" type="GridMap" parent="."]
-transform = Transform3D(1.11848, 0, 0, 0, 1, 0, 0, 0, 0.877273, 3.06721, 1.74567, -17.1889)
+transform = Transform3D(1.11848, 0, 0, 0, 1, 0, 0, 0, 0.877273, 0, 0, 0)
 mesh_library = ExtResource("5_ucpt8")
 cell_center_x = false
 cell_center_y = false
@@ -47,38 +45,31 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="props" type="Node3D" parent="."]
-transform = Transform3D(1.11848, 0, 0, 0, 1, 0, 0, 0, 0.877273, 3.06721, 1.74567, -17.1889)
+
+[node name="velas" type="Node3D" parent="props"]
+
+[node name="Vela" parent="props/velas" instance=ExtResource("3_1f8lx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 15)
+
+[node name="Vela2" parent="props/velas" instance=ExtResource("3_1f8lx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21)
 
 [node name="espinhos" type="Node3D" parent="props"]
-transform = Transform3D(0.89407, 0, 0, 0, 1, 0, 0, 0, 1.1399, -2.7423, -1.74567, 19.5936)
 
 [node name="Espinho" parent="props/espinhos" instance=ExtResource("5_hjosm")]
-transform = Transform3D(1.11848, 0, 0, 0, 1, 0, 0, 0, 0.877273, 4, 2, -0.46525)
-
-[node name="Espinho2" parent="props/espinhos" instance=ExtResource("5_hjosm")]
-transform = Transform3D(1.11848, 0, 0, 0, 1, 0, 0, 0, 0.877273, -6, 2, -0.465248)
-
-[node name="moedas" type="Node3D" parent="props"]
-transform = Transform3D(0.89407, 0, 0, 0, 1, 0, 0, 0, 1.1399, -2.7423, -1.74567, 19.5936)
-
-[node name="Moeda" parent="props/moedas" instance=ExtResource("3_btp4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43212, 5.79086, -10.3292)
-
-[node name="Moeda2" parent="props/moedas" instance=ExtResource("3_btp4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37185, 5.79086, -6.6799)
-
-[node name="Moeda3" parent="props/moedas" instance=ExtResource("3_btp4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.54401, 1.79086, 6.25671)
-
-[node name="Velas" type="Node3D" parent="props"]
-transform = Transform3D(0.894071, 0, 0, 0, 1, 0, 0, 0, 1.1399, -3.70063, 4.04519, 16.2249)
-
-[node name="Vela" parent="props/Velas" instance=ExtResource("3_1f8lx")]
-
-[node name="Vela2" parent="props/Velas" instance=ExtResource("3_1f8lx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17112, -4, 12.3624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23696, 0, 15)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.304864, 0.952396, 0, -0.952396, -0.304864, 0, 11.7551, -2.67316)
 light_energy = 0.838
 shadow_enabled = true
+
+[node name="Knight" parent="." instance=ExtResource("2_3uorr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+
+[node name="Alanca" parent="." instance=ExtResource("5_475so")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 4.2286, 6.5347)
+
+[node name="Door" parent="." node_paths=PackedStringArray("alavanca") instance=ExtResource("6_k1tco")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4637, 0, -1.63669)
+alavanca = NodePath("../Alanca")

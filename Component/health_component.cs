@@ -10,10 +10,11 @@ public partial class health_component : Node3D
 	[Export] private int vidaMaxima = 10;
 	[Export] public ProgressBar lifeBar = null;
 	// Called when the node enters the scene tree for the first time.
+
 	public int Health
 	{
 		get { return vida; }
-		set { vida = value; }
+		set { setHealth(value); }
 	}
 
 	public int MaxiumHealth
@@ -45,8 +46,8 @@ public partial class health_component : Node3D
 			vida = 0;
 			EmitSignal(SignalName.empty);
 		}
-		
 
+		GD.Print("vida setada");
 		if(lifeBar != null)
 		{
 			lifeBar.Value = vida;
@@ -66,6 +67,12 @@ public partial class health_component : Node3D
 		{
 			setHealth(value);
 		}
+	}
+
+	public void takeDamage(int value)
+	{
+		int vidaAtual = vida - value;
+		setHealth(vidaAtual);
 	}
 
 

@@ -6,6 +6,7 @@ public partial class Guerreiro : CharacterBody3D
     AnimationTree animacoes;
     AnimationNodeStateMachinePlayback stateAnimacoes;
     Label UiMoedas;
+    health_component vida;
     int totalMoedas = 0;
     public const float Speed = 5.0f;
     public const float JumpVelocity = 6.0f;
@@ -18,6 +19,7 @@ public partial class Guerreiro : CharacterBody3D
 
     public override void _Ready()
     {
+        vida = GetNode<health_component>("HealthComponent");
         posicaoinicial = this.Position;
         UiMoedas = GetNode<Label>("Moedas");
         animacoes = GetNode<AnimationTree>("AnimationState");
@@ -109,6 +111,7 @@ public partial class Guerreiro : CharacterBody3D
 
     public void dead()
     {
+        vida.Health = vida.MaxiumHealth;
         this.Position = posicaoinicial;
     }
 }

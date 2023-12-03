@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcswrbytyhrf7"]
+[gd_scene load_steps=8 format=3 uid="uid://dcswrbytyhrf7"]
 
 [ext_resource type="Script" path="res://Cenario/espinho.cs" id="1_r011f"]
 [ext_resource type="Texture2D" uid="uid://dthk8odpeqbha" path="res://KayKit_DungeonRemastered_1.0_FREE/KayKit_DungeonRemastered_1.0_FREE/Assets/gltf/floor_tile_big_spikes_dungeon_texture.png" id="2_pnngh"]
+[ext_resource type="PackedScene" uid="uid://iywg2hxupo3j" path="res://Component/damage_component.tscn" id="3_gavij"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7160j"]
 resource_name = "texture"
@@ -43,17 +44,17 @@ shadow_mesh = SubResource("ArrayMesh_1if31")
 points = PackedVector3Array(-1.00008, 0, -1.1, -1.1, 0, -1.00008, -1.00008, 1.64409, -1.1, 0.999863, 0, -1.1, -1.1, 1.64409, -1.00008, -1.1, 0, 0.999864, -1.00008, 2, -1.00008, 0.999863, 1.64409, -1.1, 1.09978, 0, -1.00008, -1.1, 1.64409, 0.999864, -1.00008, 0, 1.1, -1.00008, 2, 0.999864, 0.999863, 2, -1.00008, 1.09978, 1.64409, -1.00008, 1.09978, 0, 0.999864, -1.00008, 1.64409, 1.1, 0.999863, 0, 1.1, 0.999863, 2, 0.999864, 1.09978, 1.64409, 0.999864, 0.999863, 1.64409, 1.1)
 
 [node name="Espinho" type="Node3D"]
-transform = Transform3D(1.11848, 0, 0, 0, 1, 0, 0, 0, 0.877273, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00269985, 0.0103073, -0.00494099)
 script = ExtResource("1_r011f")
 
 [node name="spikes" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_rya0n")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="spikes"]
+[node name="Damage_Component" parent="spikes" instance=ExtResource("3_gavij")]
+collision_layer = 16
+damage = 40
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="spikes/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="spikes/Damage_Component"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_xb4pw")
-
-[connection signal="body_entered" from="spikes/Area3D" to="." method="_on_area_3d_body_entered"]

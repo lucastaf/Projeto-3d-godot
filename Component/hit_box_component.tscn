@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://tlrehmrypgag"]
+
+[ext_resource type="Script" path="res://Component/hitBox_component.cs" id="1_whxk3"]
+
+[node name="hitBox_component" type="Area3D"]
+collision_layer = 10
+collision_mask = 20
+script = ExtResource("1_whxk3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

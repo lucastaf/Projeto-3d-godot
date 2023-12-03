@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://dbuiqruj185sh"]
+
+[ext_resource type="PackedScene" uid="uid://1m0btbxgkg22" path="res://KayKit_Adventurers_1.0_FREE/KayKit_Adventurers_1.0_FREE/Assets/gltf/wand.gltf" id="1_b08lx"]
+[ext_resource type="Script" path="res://Cenario/alavanca.cs" id="1_byt7t"]
+[ext_resource type="PackedScene" uid="uid://cv5ryx01dpc0c" path="res://Component/interactable_component.tscn" id="2_up4bl"]
+
+[sub_resource type="Gradient" id="Gradient_6qyui"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w7s6i"]
+gradient = SubResource("Gradient_6qyui")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ysto"]
+albedo_color = Color(0.219608, 0.0784314, 0, 1)
+metallic_specular = 0.0
+roughness_texture = SubResource("GradientTexture1D_w7s6i")
+roughness_texture_channel = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l0fi2"]
+size = Vector3(1.5, 1, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6h5jl"]
+albedo_color = Color(0.168627, 1, 0.14902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvra2"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Alanca" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.204976, 0)
+script = ExtResource("1_byt7t")
+
+[node name="wand" parent="." instance=ExtResource("1_b08lx")]
+transform = Transform3D(-3.09086e-08, -3.09086e-08, 1, -0.707107, 0.707107, 0, -0.707107, -0.707107, -4.37114e-08, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.118223, 0)
+size = Vector3(0.188261, 0.228499, 0.697364)
+material = SubResource("StandardMaterial3D_4ysto")
+
+[node name="Interactable_Component" parent="." instance=ExtResource("2_up4bl")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_Component"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.272659, 0)
+visible = false
+shape = SubResource("BoxShape3D_l0fi2")
+
+[node name="GreenSphere" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.287)
+visible = false
+radius = 0.05
+rings = 5
+material = SubResource("StandardMaterial3D_6h5jl")
+
+[node name="RedSphere" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.286623)
+radius = 0.05
+rings = 5
+material = SubResource("StandardMaterial3D_pvra2")
+
+[connection signal="interacted" from="Interactable_Component" to="." method="_on_interactable_component_interacted"]

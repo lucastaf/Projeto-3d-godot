@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dh8tk7in3d1rv"]
+
+[ext_resource type="Texture2D" uid="uid://beb15vvq6ay44" path="res://KayKit_Adventurers_1.0_FREE/KayKit_Adventurers_1.0_FREE/Assets/gltf/mage_texture.png" id="1_j8d8a"]
+
+[resource]
+resource_name = "mage_texture"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_j8d8a")
+roughness = 0.5
