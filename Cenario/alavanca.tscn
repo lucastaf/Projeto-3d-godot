@@ -37,6 +37,7 @@ size = Vector3(0.188261, 0.228499, 0.697364)
 material = SubResource("StandardMaterial3D_4ysto")
 
 [node name="Interactable_Component" parent="." instance=ExtResource("2_up4bl")]
+MessageText = "Precione \"Interagir\" para ativar a alavanca"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_Component"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.272659, 0)

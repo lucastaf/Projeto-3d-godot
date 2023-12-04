@@ -81,6 +81,7 @@ data = PackedVector3Array(-1.0894, 2.1643, 0.25, -1.0898, 0.5, 0.25, -2, 0.5, 0.
 script = ExtResource("1_rk6s3")
 
 [node name="wall_doorway" type="Node3D" parent="."]
+transform = Transform3D(1.21, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Parede" type="StaticBody3D" parent="wall_doorway"]
 

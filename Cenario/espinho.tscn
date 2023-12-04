@@ -53,8 +53,7 @@ skeleton = NodePath("")
 
 [node name="Damage_Component" parent="spikes" instance=ExtResource("3_gavij")]
 collision_layer = 16
-damage = 40
+damage = 50
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="spikes/Damage_Component"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_xb4pw")
