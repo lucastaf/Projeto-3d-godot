@@ -13,6 +13,7 @@ public partial class Guerreiro : CharacterBody3D
     private bool onGround = true;
     private int numPulos;
     public Vector3 posicaoinicial;
+    private CollisionShape3D atackColission;
 
     // Get the gravity from the project settings to be synced with RigidBody nodes.
     public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
@@ -24,10 +25,16 @@ public partial class Guerreiro : CharacterBody3D
         UiMoedas = GetNode<Label>("Moedas");
         animacoes = GetNode<AnimationTree>("AnimationState");
         stateAnimacoes = (AnimationNodeStateMachinePlayback)animacoes.Get("parameters/playback");
+        atackColission = GetNode<CollisionShape3D>("Damage_Component/HitBox Colision");
     }
 
     public override void _PhysicsProcess(double delta)
     {
+
+        if (Input.IsActionJustPressed("Restart"))
+        {
+            GetTree().ReloadCurrentScene();
+        }
 
         if (this.GlobalPosition.Y < -10)
         {
@@ -64,6 +71,7 @@ public partial class Guerreiro : CharacterBody3D
         if (Input.IsActionJustPressed("ataque"))
         {
             stateAnimacoes.Travel("Atacando");
+            atackColission.Disabled = false;
         }
 
 
@@ -113,5 +121,13 @@ public partial class Guerreiro : CharacterBody3D
     {
         vida.Health = vida.MaxiumHealth;
         this.Position = posicaoinicial;
+    }
+
+    public void _on_animation_state_animation_finished(string animationName)
+    {
+        if (animationName == "1H_Melee_Attack_Slice_Diagonal")
+        {
+            atackColission.Disabled = true;
+        }
     }
 }

@@ -47,7 +47,6 @@ public partial class health_component : Node3D
 			EmitSignal(SignalName.empty);
 		}
 
-		GD.Print("vida setada");
 		if(lifeBar != null)
 		{
 			lifeBar.Value = vida;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dywwafkcx5qtr"]
+[gd_scene load_steps=12 format=3 uid="uid://dywwafkcx5qtr"]
 
 [ext_resource type="PackedScene" uid="uid://t4w0t1f5ssj7" path="res://assets/Guerreiro.tscn" id="2_3uorr"]
 [ext_resource type="PackedScene" uid="uid://crhcakiwc7kmq" path="res://assets/vela.tscn" id="3_1f8lx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dcswrbytyhrf7" path="res://Cenario/espinho.tscn" id="5_hjosm"]
 [ext_resource type="MeshLibrary" uid="uid://c4srcl6nu3ep" path="res://assets/tiles.tres" id="5_ucpt8"]
 [ext_resource type="PackedScene" uid="uid://nmlqs350uqf1" path="res://Cenario/door.tscn" id="6_k1tco"]
+[ext_resource type="PackedScene" uid="uid://dn7kkuvg0cshn" path="res://assets/barril.tscn" id="8_c8158"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xcek5"]
 sky_top_color = Color(0.505882, 0.584314, 0.819608, 1)
@@ -135,3 +136,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 4.2286, 7.5347)
 [node name="Door" parent="." node_paths=PackedStringArray("alavanca") instance=ExtResource("6_k1tco")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25344, 0, -1.76349)
 alavanca = NodePath("../Alanca")
+
+[node name="Barril" parent="." instance=ExtResource("8_c8158")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 23.5347)

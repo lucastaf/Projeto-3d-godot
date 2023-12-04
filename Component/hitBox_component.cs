@@ -16,7 +16,6 @@ public partial class hitBox_component : Node3D
 
     public void _on_area_entered(Area3D body)
     {
-        GD.Print("body entered" + body.GetType());
         if (body is Damage_Component)
         {
             int dano = ((Damage_Component)body).damage;

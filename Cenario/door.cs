@@ -8,7 +8,6 @@ public partial class door : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		GD.Print("pai");
 		alavanca.active += active => _on_lever_interactable_active(active);
 		doorObject = GetNode<Node3D>("wall_doorway/Parede/wall_doorway2/wall_doorway_door");
 	}
