@@ -7,7 +7,7 @@ public partial class Guerreiro : CharacterBody3D
     AnimationNodeStateMachinePlayback stateAnimacoes;
     Label UiMoedas;
     health_component vida;
-    int totalMoedas = 0;
+    public int totalMoedas = 0;
     public const float Speed = 5.0f;
     public const float JumpVelocity = 5.0f;
     private bool onGround = true;

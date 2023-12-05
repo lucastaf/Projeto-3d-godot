@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvyv0mqb2xcxd"]
+
+[ext_resource type="Script" path="res://Cenario/PlataformaAtivavel.cs" id="1_c7v78"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ptgqa"]
+points = PackedVector3Array(-1, -0.1, -1, -1, -0.1, 1, -1, 0.05, -1, 1, -0.1, -1, -1, 0.05, 1, 1, -0.1, 1, 1, 0.05, -1, 1, 0.05, 1)
+
+[node name="PlataformaAtivavel" type="Node3D"]
+script = ExtResource("1_c7v78")
+
+[node name="floor_tile_small_gltf" type="Node3D" parent="."]
+
+[node name="floor_tile_small" type="CSGBox3D" parent="floor_tile_small_gltf"]
+visible = false
+size = Vector3(2, 0.125, 2)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor_tile_small_gltf/floor_tile_small"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor_tile_small_gltf/floor_tile_small/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0144281, 0)
+shape = SubResource("ConvexPolygonShape3D_ptgqa")
+disabled = true
