@@ -8,7 +8,7 @@ public partial class Level1 : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		coinsLabel = GetNode<Label>("Label");
+		coinsLabel = GetNode<Label>("ContadorMoedas");
 		player = GetNode<Guerreiro>("Knight");
 
     }
@@ -17,7 +17,7 @@ public partial class Level1 : Node3D
 	public override void _Process(double delta)
 	{
 		coinsLabel.Text = player.totalMoedas.ToString() + "/12";
-		if(player.totalMoedas == 2)
+		if(player.totalMoedas == 12)
 		{
 			GetTree().ChangeSceneToFile("res://Levels/Level2.tscn");
 		}

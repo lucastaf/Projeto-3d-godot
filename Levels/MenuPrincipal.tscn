@@ -59,3 +59,4 @@ grow_vertical = 2
 text = "Sair"
 
 [connection signal="pressed" from="iniciarJogo" to="." method="_on_iniciar_jogo_pressed"]
+[connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]

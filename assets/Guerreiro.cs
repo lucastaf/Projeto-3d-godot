@@ -47,7 +47,7 @@ public partial class Guerreiro : CharacterBody3D
         if (!IsOnFloor())
         {
             if (onGround)
-                stateAnimacoes.Travel("Jump_Start");
+                animacoes.Set("parameters/conditions/onAir", true);
             velocity.Y -= gravity * (float)delta;
 
             animacoes.Set("parameters/conditions/onGround", false);
@@ -56,6 +56,7 @@ public partial class Guerreiro : CharacterBody3D
         }
         else
         {
+            animacoes.Set("parameters/conditions/onAir", false);
             animacoes.Set("parameters/conditions/onGround", true);
             onGround = true;
             numPulos = 2;

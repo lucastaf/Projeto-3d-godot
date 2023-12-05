@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://p5avys074rdn"]
+[gd_scene load_steps=16 format=3 uid="uid://p5avys074rdn"]
 
+[ext_resource type="Script" path="res://Levels/Level2.cs" id="1_mm4lc"]
 [ext_resource type="MeshLibrary" uid="uid://c4srcl6nu3ep" path="res://assets/tiles.tres" id="1_s7ce0"]
 [ext_resource type="PackedScene" uid="uid://dcp1wxyrdmw75" path="res://Cenario/moeda.tscn" id="2_nytp4"]
 [ext_resource type="PackedScene" uid="uid://dj25j3wm0oceg" path="res://Cenario/espinho_dinamico.tscn" id="2_q4m6e"]
@@ -34,7 +35,8 @@ ambient_light_energy = 12.62
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ns8x"]
 size = Vector3(4, 4, 4)
 
-[node name="Node3D" type="Node3D"]
+[node name="Level2" type="Node3D"]
+script = ExtResource("1_mm4lc")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4gpln")
@@ -45,7 +47,7 @@ light_energy = 0.838
 shadow_enabled = true
 
 [node name="Knight" parent="." instance=ExtResource("3_w05cq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3365, 1.06188, -42.0004)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3365, 2.06188, 12.9996)
 
 [node name="Door" parent="." node_paths=PackedStringArray("alavanca") instance=ExtResource("5_fxjh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0.000471239, 0, -0.000471239, 1, 18.9491, 0.975369, -37.0334)
@@ -62,9 +64,26 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="props" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.789911, 0.590689, 0.233559)
+
+[node name="Velas" type="Node3D" parent="props"]
+
+[node name="Vela" parent="props/Velas" instance=ExtResource("8_ad8mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.27436, 1.04519, -6.42653)
+
+[node name="Vela2" parent="props/Velas" instance=ExtResource("8_ad8mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80634, 1.04519, 5.28527)
+
+[node name="Vela3" parent="props/Velas" instance=ExtResource("8_ad8mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.434019, 1.04519, -29.7291)
+
+[node name="Vela4" parent="props/Velas" instance=ExtResource("8_ad8mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3292, 1.04519, -10.0775)
+
+[node name="Vela5" parent="props/Velas" instance=ExtResource("8_ad8mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5803, 1.04519, -29.6193)
 
 [node name="espinhos" type="Node3D" parent="props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.789911, 0.590689, 0.233559)
 
 [node name="espinhoDinamico" parent="props/espinhos" instance=ExtResource("2_q4m6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5532, 0.723248, -6.49493)
@@ -103,7 +122,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87003, 0.4545, -9.04228)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4554, 0.4545, -28.85)
 
 [node name="Moeda" parent="props" instance=ExtResource("2_nytp4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.861, 0.595532, -9.92519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6509, 1.18622, -9.69163)
 
 [node name="Moeda2" parent="props/Moeda" instance=ExtResource("2_nytp4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.937099, 0.0836954, -0.945037)
@@ -195,21 +214,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0017, -0.141032, -0.98975)
 [node name="Moeda25" parent="props/Moeda" instance=ExtResource("2_nytp4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8971, -0.141032, -14.1756)
 
-[node name="Vela" parent="props" instance=ExtResource("8_ad8mx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.06427, 0.4545, -6.66009)
-
-[node name="Vela" parent="props/Vela" instance=ExtResource("8_ad8mx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0807, 0, 11.7118)
-
-[node name="Vela2" parent="props/Vela" instance=ExtResource("8_ad8mx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.84034, 0, -23.3026)
-
-[node name="Vela3" parent="props/Vela" instance=ExtResource("8_ad8mx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0548, 0, -3.65099)
-
-[node name="Vela4" parent="props/Vela" instance=ExtResource("8_ad8mx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8547, 0, -23.1928)
-
 [node name="banner_patternA_green_gltf" parent="." instance=ExtResource("9_0lyqv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -49)
 
@@ -219,3 +223,12 @@ MessageText = "Interaja para finalizar o game"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_Component"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 3, -47)
 shape = SubResource("BoxShape3D_7ns8x")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05004, 2.68637, 8.94031)
+pixel_size = 0.01
+billboard = 2
+text = "Fase 2: Ative a alavanca
+e Encontre a saida"
+
+[connection signal="interacted" from="Interactable_Component" to="." method="_on_interactable_component_interacted"]

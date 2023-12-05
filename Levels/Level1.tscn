@@ -198,13 +198,13 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21.8227)
 
 [node name="PlataformaAtivavel" parent="." node_paths=PackedStringArray("alavanca") instance=ExtResource("9_2t8kw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 9.49961, -20.5948)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90866, 9.49961, -20.9097)
 alavanca = NodePath("../props/alavancas/Alanca3")
 
 [node name="Vela" parent="." instance=ExtResource("3_1f8lx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 12, -20.4653)
 
-[node name="Label" type="Label" parent="."]
+[node name="ContadorMoedas" type="Label" parent="."]
 offset_left = 1016.0
 offset_top = 16.0
 offset_right = 1156.0
@@ -213,3 +213,10 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 20
 text = "0/0"
+
+[node name="introducao" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76784, 2.09911, 19.1646)
+pixel_size = 0.01
+billboard = 2
+text = "Fase 1: Colete todas as moedas
+"

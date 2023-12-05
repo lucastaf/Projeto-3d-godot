@@ -1,12 +1,11 @@
 using Godot;
 using System;
 
-public partial class MenuPrincipal : Control
+public partial class game_over_screen : Control
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Input.MouseMode = Input.MouseModeEnum.Visible;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,13 +13,8 @@ public partial class MenuPrincipal : Control
 	{
 	}
 
-	private void _on_iniciar_jogo_pressed()
+	public void _on_button_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://Levels/Level1.tscn");
-	}
-
-	private void _on_sair_pressed()
-	{
-		GetTree().Quit();
+		GetTree().ChangeSceneToFile("res://Levels/MenuPrincipal.tscn");
 	}
 }
