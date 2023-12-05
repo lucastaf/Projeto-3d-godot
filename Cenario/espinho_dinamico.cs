@@ -5,7 +5,7 @@ public partial class espinho_dinamico : Node3D
 {
 	// Called when the node enters the scene tree for the first time.
 	[Export] public bool active;
-	[Export] public double timeOut = 5;
+	[Export] public double timeOut = 3;
 	private CollisionShape3D spikeColision;
 	private Node3D spikeMesh;
 	public override void _Ready()
